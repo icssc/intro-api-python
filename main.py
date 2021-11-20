@@ -10,31 +10,32 @@ URL = 'https://api.peterportal.org/rest/v0/courses/all'
 URL2 = 'https://api.peterportal.org/rest/v0/grades/calculated'
 
 def main():
-    # response = requests.get(URL)
-    # print(response.json())
-
-
     query = {
         'year': '2019-20',
         'instructor': 'PATTIS, R.',
         'department': 'I&C SCI',
         'numer': '33'
     }
+    # Not necessary for every Web API, but it's good practice
+    # Ensures our response is in JSON format.
     headers = {
         "Content-Type": "application/json",
     }
 
     try:
+       # response = requests.get(URL) 
         response = requests.get(URL2, params = query, headers = headers, timeout = 5)
-        response.raise_for_status()
+        response.raise_for_status() #returns HTTPError object in case of error.
         print(response.json())
-    except requests.exceptions.HTTPError as errh:
+
+    #Requests module handles errors by using exception handling. 
+    except requests.exceptions.HTTPError as errh: #catches HTTPError object
         print(errh)
-    except requests.exceptions.ConnectionError as errc:
+    except requests.exceptions.ConnectionError as errc: #if there was an connection error
         print(errc)
-    except requests.exceptions.Timeout as errt:
+    except requests.exceptions.Timeout as errt: #if time exceeds the timeout allotted above. 
         print(errt)
-    except requests.exceptions.RequestException as err:
+    except requests.exceptions.RequestException as err: #ambiguous exception that occurred while handling your request
         print(err)
 
 
