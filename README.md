@@ -29,4 +29,5 @@ python main.py
 
 ## Resources
 https://www.nylas.com/blog/use-python-requests-module-rest-apis/
+
 https://docs.python-requests.org/en/latest/
