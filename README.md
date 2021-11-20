@@ -2,7 +2,7 @@
 
 A demo of how to use APIs with [Python](https://www.python.org/). This demo uses the [PeterPortal API](https://api.peterportal.org/).
 
-If you are using JavaScript, you can checkout how to make API requests [here] (https://github.com/icssc-projects/intro-api-workshop)
+If you are using JavaScript, you can checkout how to make API requests [here](https://github.com/icssc-projects/intro-api-workshop)
 
 ## Setup
 
